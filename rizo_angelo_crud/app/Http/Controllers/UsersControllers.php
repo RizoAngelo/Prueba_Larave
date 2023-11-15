@@ -3,35 +3,43 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class UsersControllers extends Controller
 {
     public function index(Request $request)
     {
-        $texto=trim($request->get('texto'));
-        $users=DB::table('users')
-            ->select('id','documento','tipo_documento','primer_nombre','segundo_nombre','primer_apellido','segundo_apellido','telefono','email','email_verified_at','password','remenber_token','id_roles','created_at','updated_at')
-            ->where('documento','LIKE','%'.$texto.'%')
-            ->orWhere('primer_nombre','LIKE','%'.$texto.'%')
-            ->orderBy('primer_nombre','asc')
-            -paginate(10);
-        return view('users.index', compact('users','texto'));
+
+        $users=User::all();
+        return view('cliente.select',['users'=>$users]);
+
+        // $texto=trim($request->get('texto'));
+        // $users=DB::table('users')
+        //     ->select('documento','tipo_documento','nombre','primer_apellido','segundo_apellido','telefono','email','password','id_roles')
+        //     ->where('documento','LIKE','%'.$texto.'%')
+        //     ->orWhere('nombre','LIKE','%'.$texto.'%')
+        //     ->orderBy('nombre','asc')
+        //     ->paginate(10);
+        // return view('cliente/select', compact('users','texto'));
+
     }
 
     public function edit($id)
     {
-        $country = Country::find($id);
+        $users = User::find($id);
         return view('users.update', compact('users'));
     }
 
-        public function update(Request $request, $id)
-     {
-         $request->validate(Country::$rules);
+    public function update(Request $request, $id)
+    {
+        // Validación de datos
+        $request->validate(User::$rules);
 
-        Country::where('id', $id)->update($request->except('_token', '_method'));
+        // Crea un nuevo usuario
+        User::create($request->all());
 
-         return redirect('#')->with('success', 'Usuario actualizado correctamente');
-     }
+        return redirect('')->with('success', 'Usuario creado correctamente');
+    }
 
     public function store(Request $request)
     {
@@ -40,7 +48,7 @@ class UsersControllers extends Controller
             'country_name' => 'required|string|min:4|max:50'
         ]);
 
-        Country::create([
+        User::create([
             'country_code' => $request->country_code,
             'country_name' => $request->country_name,
         ]);
@@ -50,10 +58,9 @@ class UsersControllers extends Controller
 
     public function destroy($id)
     {
-        $country = Country::find($id);
+        $country = User::find($id);
         $country->delete($id);
-        return redirect('/country')->with('success', 'Usuario eliminado correctamente');
-        // return view('destroy.{id}.countrys.index');
+        return redirect('cliente.select')->with('success', 'Usuario eliminado correctamente');
 
     }
 }

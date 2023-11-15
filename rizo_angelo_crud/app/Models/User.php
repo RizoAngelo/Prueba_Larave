@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Roles;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,6 +12,8 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = 'users';
 
     protected $fillable = [
         'documento',
@@ -24,7 +27,7 @@ class User extends Authenticatable
         'id_roles',
     ];
 
-    protected $rules=[
+    public static $rules=[
         'documento',
         'tipo_documento',
         'nombre',
@@ -44,4 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles(){
+        return  $this->belongsTo(Roles::class,'id_roles','id');
+    }
 }

@@ -17,7 +17,7 @@ use App\Http\Controllers\UsersControllers;
 //     return view('welcome');
 // });
 
-Route::get('/index',[UsersControllers::class,'index'])->name('users.index');
+Route::get('/',[UsersControllers::class,'index'])->name('users.index');
 Route::get('/store',[UsersControllers::class,'store'])->name('users.store');
 Route::get('/edit',[UsersControllers::class,'edit'])->name('users.edit');
 Route::get('/update',[UsersControllers::class,'update'])->name('users.update');
