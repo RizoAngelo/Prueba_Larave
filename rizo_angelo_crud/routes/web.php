@@ -18,7 +18,8 @@ use App\Http\Controllers\UsersControllers;
 // });
 
 Route::get('/',[UsersControllers::class,'index'])->name('users.index');
-Route::get('/store',[UsersControllers::class,'store'])->name('users.store');
+Route::post('/create/store',[UsersControllers::class,'store'])->name('users.store');
 Route::get('/edit',[UsersControllers::class,'edit'])->name('users.edit');
 Route::get('/update',[UsersControllers::class,'update'])->name('users.update');
 Route::get('/destroy/{id}',[UsersControllers::class,'destroy'])->name('users.destroy');
+Route::get('/create',[UsersControllers::class,'create'])->name('users.create');

@@ -6,14 +6,16 @@
         <div class="row">
             <div class="col-xl-12">
                 <form action="{{route('users.index')}}" method="get">
-                    {{-- <div class="form-row">
-                        <div class="col-sm-4 my-11">
+                    {{-- <a href="{{route('users.store',$users->id)}}" class="btn btn-warning btn-sm">Crear Un Cliente</a> --}}
+                    <div class="form-row">
+                        <a href="{{route('users.create')}}" class="btn btn-warning btn-sm">Crear Un Cliente</a>
+                        {{-- <div class="col-sm-4 my-11">
                              <input type="text" class="form-control" name="texto" value="{{$texto}}">
                         </div>
                         <div class="col-auto my-11">
                             <input type="submit" class="btn btn-primary" value="Buscar">
-                        </div>
-                    </div> --}}
+                        </div> --}}
+                    </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
