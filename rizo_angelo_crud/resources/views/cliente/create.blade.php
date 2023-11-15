@@ -79,6 +79,7 @@
       </div>
 
 
+
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
             Segundo Apellido:
@@ -155,9 +156,11 @@
           id="exampleInputPassword1"
           name="id_roles"
           type="text" class="form-control"
+          value="1"
           @error('id_roles')
             value="{{ old('id_roles') }}"
           @enderror
+          disabled
         >
           @error('id_roles')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
