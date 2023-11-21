@@ -10,7 +10,7 @@
       <h6 class="alert alert-success p-2 mt-2" >{{ session('success') }}</h6>   
     @endif
 
-    <div class="mb-3">
+     <div class="mb-3">
       <label for="exampleInputEmail1"class="form-label">
         Documento:
       </label>
@@ -160,7 +160,6 @@
           @error('id_roles')
             value="{{ old('id_roles') }}"
           @enderror
-          disabled
         >
           @error('id_roles')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
@@ -174,4 +173,4 @@
   </form>
 </div>
 
-@endsection   
+@endsection  

@@ -13,13 +13,13 @@ use App\Http\Controllers\UsersControllers;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('index');
+ });
 
-Route::get('/',[UsersControllers::class,'index'])->name('users.index');
+Route::get('/select',[UsersControllers::class,'index'])->name('users.select');
 Route::post('/create/store',[UsersControllers::class,'store'])->name('users.store');
 Route::get('/edit',[UsersControllers::class,'edit'])->name('users.edit');
 Route::get('/update',[UsersControllers::class,'update'])->name('users.update');
-Route::get('/destroy/{id}',[UsersControllers::class,'destroy'])->name('users.destroy');
+Route::delete('/destroy/{id}',[UsersControllers::class,'destroy'])->name('users.destroy');
 Route::get('/create',[UsersControllers::class,'create'])->name('users.create');

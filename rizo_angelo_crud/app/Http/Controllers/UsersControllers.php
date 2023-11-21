@@ -77,9 +77,11 @@ class UsersControllers extends Controller
 
     public function destroy($id)
     {
-        $country = User::find($id);
-        $country->delete($id);
-        return redirect('cliente.select')->with('success', 'Usuario eliminado correctamente');
+        $users = User::find($id);
+        $users -> delete($id);
+        return view('cliente.select')->with('success', 'Usuario eliminado correctamente');
+        // return redirect('')->with('success', 'Usuario eliminado correctamente');
+        
 
     }
 }

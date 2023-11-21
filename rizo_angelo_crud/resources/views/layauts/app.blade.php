@@ -23,11 +23,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Gestionar usuario</a>
+              <a class="nav-link" href="{{ route('users.select') }}">Gestionar Cliente</a>
+            </li>
+            {{-- <li class="nav-item">
+              <a class="nav-link" href="{{ route('empleado.select') }}">Gestianar Empleados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"></a>
+              <a class="nav-link" href="{{ route('role.select') }}">Gestianar Roles</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('habitacione.select') }}">Gestianar Habitaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('metodopago.select') }}">Gestianar metodos de pagos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('reserva.select') }}">Gestianar Reserva</a>
+            </li> --}}
           </ul>
         </div>
       </div>
