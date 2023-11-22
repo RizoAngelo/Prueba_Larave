@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('habitaciones', function (Blueprint $table) {
             $table->id();
+            $table->string('id_habitacion',20)->unique();
             $table->string('nombre_tipo',20);
+            $table->float('precio',20);
+            $table->enum('estado', ['Activo','Cancelado']);
+            $table->string('cantidad_personas',5);
+            $table->foreign('nombre_tipo')->references('nombre_tipo')->on('tipohabitaciones');
             $table->timestamps();
         });
     }

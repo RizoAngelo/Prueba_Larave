@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('documento',);
+            $table->string('documento',50)->unique();
             $table->enum('tipo_documento', ['CC','Pasarporte','CC extranjera']);
             // $table->string('tipo_documento',20);
             $table->string('nombre',25);

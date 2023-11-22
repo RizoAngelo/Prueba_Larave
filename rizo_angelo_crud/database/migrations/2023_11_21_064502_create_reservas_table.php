@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
+            $table->string('id_reservas',10);
+            $table->string('documento',30);
+            $table->string('id_habitacion',5);
+            $table->string('cantidad_perosnas',5);
+            $table->date('fecha_inicio',50);
+            $table->date('fecha_final',50);
+            $table->string('dias',10);
+            $table->string('cantida_personas');
+            $table->foreign('documento')->references('documento')->on('users');
+            $table->foreign('id_habitacion')->references('id_habitacion')->on('habitaciones');
             $table->timestamps();
         });
     }

@@ -15,16 +15,10 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string('documento',20);
-            $table->enum('tipo_documento', ['CC','Pasarporte','CC extranjera']);
-            $table->string('nombre',25);
-            $table->float('salario');
-            $table->string('segundo_apellido',25)->nullable();
-            $table->string('telefono')->unique();
-            $table->string('email',60)->unique();
+            $table->string('documento');
+            $table->float('salario');;
             $table->string('password',20);
-            $table->foreignId('id_roles');
-            $table->foreign('id_roles')->references('id')->on('roles');
+            $table->foreign('documento')->references('documento')->on('users');
         });
     }
 

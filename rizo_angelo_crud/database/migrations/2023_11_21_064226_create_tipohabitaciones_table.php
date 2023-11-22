@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('tipohabitaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_tipo',20);
-            $table->float('precio',20);
+            $table->string('nombre_tipo',20)->unique();
+            $table->float('precio_dia',20);
             $table->timestamps();
         });
     }
