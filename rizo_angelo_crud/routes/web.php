@@ -21,7 +21,7 @@ Route::get('/select',[UsersControllers::class,'index'])->name('users.select');
 Route::post('/create/store',[UsersControllers::class,'store'])->name('users.store');
 Route::get('/edit',[UsersControllers::class,'edit'])->name('users.edit');
 Route::get('/update',[UsersControllers::class,'update'])->name('users.update');
-Route::delete('/destroy/{id}',[UsersControllers::class,'destroy'])->name('users.destroy');
+Route::GET('/destroy/{id}',[UsersControllers::class,'destroy'])->name('users.destroy');
 Route::get('/create',[UsersControllers::class,'create'])->name('users.create');
 //empleado//
 Route::get('/selectE',[UsersControllers::class,'index'])->name('empleado.select');

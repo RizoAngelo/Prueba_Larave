@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -78,8 +79,8 @@ class UsersControllers extends Controller
     public function destroy($id)
     {
         $users = User::find($id);
-        $users -> delete($id);
-        return view('cliente.select')->with('success', 'Usuario eliminado correctamente');
+        $users->delete($id);
+        return redirect('/select')->with('success', 'Usuario eliminado correctamente');
         // return redirect('')->with('success', 'Usuario eliminado correctamente');
         
 

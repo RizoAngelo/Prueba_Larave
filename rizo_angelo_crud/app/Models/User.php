@@ -16,6 +16,7 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $fillable = [
+        'id',
         'documento',
         'tipo_documento',
         'nombre',
@@ -28,6 +29,7 @@ class User extends Authenticatable
     ];
 
     public static $rules=[
+        'id',
         'documento',
         'tipo_documento',
         'nombre',

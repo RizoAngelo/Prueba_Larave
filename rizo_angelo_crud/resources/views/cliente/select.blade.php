@@ -52,10 +52,10 @@
                         <td>
                             <a href="{{route('users.destroy',$users->id)}}" method="post" class="btn btn-danger btn-sm">Eliminar</a>
                             {{-- <form action="{{route('users.destroy',$users->id)}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" class="btn btn-danger btn-sm" value="Eliminar"> --}}
-                        {{-- </form> --}}
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-danger btn-sm" value="Eliminar">
+                            </form> --}}
                         </td>
                     </tr>
                 @endforeach
