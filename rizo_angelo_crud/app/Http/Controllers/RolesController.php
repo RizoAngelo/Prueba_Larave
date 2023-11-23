@@ -15,7 +15,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        //
+        $roles=Roles::all();
+        return view('roles.select',['Roles'=>$roles]);
     }
 
     /**
@@ -25,7 +26,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('role.create');
     }
 
     /**
@@ -36,7 +37,31 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'role_nombre' => 'required|string|min:2|max:20|unique:roles,role_nombre',
+            'tipo_documento' => 'required|string|min:2|max:30',
+            'nombre' => 'required|string|min:4|max:50',
+            'primer_apellido' => 'required|string|min:4|max:50',
+            'segundo_apellido' => 'required|string|min:4|max:50',
+            'telefono' => 'required|string|min:4|max:50',
+            'email' => 'required|string|min:4|max:50',
+            'password' => 'required|string|min:4|max:50',
+            'id_roles' => 'required|string|min:1|max:5',
+        ]);
+
+        roles::create([
+            'documento' => $request->documento,
+            'nombre' => $request->nombre,
+            'tipo_documento' => $request->tipo_documento,
+            'primer_apellido' => $request->primer_apellido,
+            'segundo_apellido' => $request->segundo_apellido,
+            'telefono' => $request->telefono,
+            'email' => $request->email,
+            'password' => $request->password,
+            'id_roles' => $request->id_roles,
+        ]);
+        return view('roles.create')->with('success', 'Usuario creado correctamente');
+        // return redirect()->back()->with('success', 'País creado correctamente');
     }
 
     /**
@@ -81,6 +106,8 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $roles = User::find($id);
+        $roles->delete($id);
+        return redirect('')->route('roles.select')->with('success', 'role eliminado correctamente');
     }
 }

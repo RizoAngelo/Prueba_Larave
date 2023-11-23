@@ -7,31 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 class Reserva extends Model
 {
     use HasFactory;
-    protected $table = 'users';
+    protected $table = 'reservas';
 
     protected $fillable = [
         'id',
+        'id_reservas',
         'documento',
-        'tipo_documento',
-        'nombre',
-        'primer_apellido',
-        'segundo_apellido',
-        'telefono',
-        'email',
-        'password',
-        'id_roles',
+        'id_habitacion',
+        'cantidad_personas',
+        'fecha_inicio',
+        'fecha_final',
+        'dias',
+        'cantidad_personas',
     ];
 
     public static $rules=[
         'id',
+        'id_reservas',
         'documento',
-        'tipo_documento',
-        'nombre',
-        'primer_apellido',
-        'segundo_apellido',
-        'telefono',
-        'email',
-        'password',
-        'id_roles',
+        'id_habitacion',
+        'cantidad_personas',
+        'fecha_inicio',
+        'fecha_final',
+        'dias',
+        'cantidad_personas',
     ];
 }

@@ -15,7 +15,8 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-        //
+        $empleados=Empleado::all();
+        return view('empleado.select',['empleados'=>$empleados]);
     }
 
     /**
@@ -25,7 +26,7 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
-        //
+        return view('empleado.create');
     }
 
     /**
@@ -36,7 +37,19 @@ class EmpleadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'documento' => 'required|string|min:2|max:10|unique:empleados,documento',
+            'salario' => 'required|string|min:2|max:30',
+            'password' => 'required|string|min:4|max:50',
+        ]);
+
+        Empleado::create([
+            'documento' => $request->documento,
+            'salario' => $request->salario,
+            'password' => $request->password,
+        ]);
+        return view('cliente.create')->with('success', 'Empleado creado correctamente');
+        // return redirect()->back()->with('success', 'País creado correctamente');
     }
 
     /**
@@ -81,6 +94,8 @@ class EmpleadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $empleados = Empleado::find($id);
+        $empleados->delete($id);
+        return redirect('')->route('empleados.index')->with('success', 'empleado eliminado correctamente');
     }
 }

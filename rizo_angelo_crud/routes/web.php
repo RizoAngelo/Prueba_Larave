@@ -39,7 +39,7 @@ Route::resource('habitacion',HabitacionsController::class);
 // Route::post('/create/storeH',[UsersControllers::class,'store'])->name('habitacion.store');
 // Route::delete('/destroyH/{id}',[UsersControllers::class,'destroy'])->name('habitacion.destroy');
 //metodopago//
-Route::resource('metododepago',MetodopagoController::class);
+// Route::resource('metododepago',MetodopagoController::class);
 // Route::get('/selectM',[UsersControllers::class,'index'])->name('metodopago.select');
 // Route::post('/create/storeM',[UsersControllers::class,'store'])->name('metodopago.store');
 // Route::delete('/destroyM/{id}',[UsersControllers::class,'destroy'])->name('metodopago.destroy');
