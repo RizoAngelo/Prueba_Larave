@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container w-50 border p-4 mt-4"> 
-  <form action="{{ route('habitacione.store') }}" method="POST" novalidate>
+  <form action="{{ route('habitacion.store') }}" method="POST" novalidate>
     @csrf
     
     @if (session('success'))
@@ -82,86 +82,17 @@
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-            Segundo Apellido:
+            cantidad persona:
         </label>
         <input
           id="exampleInputPassword1"
-          name="segundo_apellido"
+          name="cantidad_personas"
           type="text" class="form-control"
-          @error('segundo_apellido')
-            value="{{ old('segundo_apellido') }}"
+          @error('cantidad_personas')
+            value="{{ old('cantidad_personas') }}"
           @enderror
         >
-          @error('segundo_apellido')
-            <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
-          @enderror
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
-            Telefono:
-        </label>
-        <input
-          id="exampleInputPassword1"
-          name="telefono"
-          type="text" class="form-control"
-          @error('telefono')
-            value="{{ old('telefono') }}"
-          @enderror
-        >
-          @error('telefono')
-            <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
-          @enderror
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
-            Email:
-        </label>
-        <input
-          id="exampleInputPassword1"
-          name="email"
-          type="text" class="form-control"
-          @error('email')
-            value="{{ old('email') }}"
-          @enderror
-        >
-          @error('email')
-            <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
-          @enderror
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
-          Contraseña:
-        </label>
-        <input
-          id="exampleInputPassword1"
-          name="password"
-          type="text" class="form-control"
-          @error('password')
-            value="{{ old('password') }}"
-          @enderror
-        >
-          @error('password')
-            <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
-          @enderror
-      </div>
-      
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
-            ID Rol:
-        </label>
-        <input
-          id="exampleInputPassword1"
-          name="id_roles"
-          type="text" class="form-control"
-          value="1"
-          @error('id_roles')
-            value="{{ old('id_roles') }}"
-          @enderror
-        >
-          @error('id_roles')
+          @error('cantidad_personas')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>

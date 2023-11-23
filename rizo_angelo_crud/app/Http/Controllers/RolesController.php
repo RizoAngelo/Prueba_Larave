@@ -16,7 +16,7 @@ class RolesController extends Controller
     public function index()
     {
         $roles=Roles::all();
-        return view('roles.select',['Roles'=>$roles]);
+        return view('role.select',['Roles'=>$roles]);
     }
 
     /**
@@ -60,7 +60,7 @@ class RolesController extends Controller
             'password' => $request->password,
             'id_roles' => $request->id_roles,
         ]);
-        return view('roles.create')->with('success', 'Usuario creado correctamente');
+        return view('role.create')->with('success', 'Usuario creado correctamente');
         // return redirect()->back()->with('success', 'País creado correctamente');
     }
 
@@ -108,6 +108,6 @@ class RolesController extends Controller
     {
         $roles = User::find($id);
         $roles->delete($id);
-        return redirect('')->route('roles.select')->with('success', 'role eliminado correctamente');
+        return redirect('')->route('role.select')->with('success', 'role eliminado correctamente');
     }
 }

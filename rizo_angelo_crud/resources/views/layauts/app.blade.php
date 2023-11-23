@@ -25,21 +25,21 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('users.select') }}">Gestionar Cliente</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('empleado.index') }}">Gestianar Empleados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('roles.index') }}">Gestianar Roles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('habitacion.index') }}">Gestianar Habitaciones</a>
+            </li>
             {{-- <li class="nav-item">
-              <a class="nav-link" href="{{ route('empleado.select') }}">Gestianar Empleados</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('role.select') }}">Gestianar Roles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('habitacione.select') }}">Gestianar Habitaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('metodopago.select') }}">Gestianar metodos de pagos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('reserva.select') }}">Gestianar Reserva</a>
+              <a class="nav-link" href="{{ route('metodopago.index') }}">Gestianar metodos de pagos</a>
             </li> --}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('reserva.index') }}">Gestianar Reserva</a>
+            </li>
           </ul>
         </div>
       </div>

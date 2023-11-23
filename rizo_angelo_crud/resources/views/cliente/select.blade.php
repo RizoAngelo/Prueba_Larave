@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h4>Gestion de Empleados</h4>
+        <h4>Gestion de usuario</h4>
         <div class="row">
             <div class="col-xl-12">
                 <form action="{{route('users.select')}}" method="get">

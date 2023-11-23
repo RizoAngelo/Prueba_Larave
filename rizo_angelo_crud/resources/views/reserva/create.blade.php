@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container w-50 border p-4 mt-4"> 
-  <form action="{{ route('users.store') }}" method="POST" novalidate>
+  <form action="{{ route('reserva.index') }}" method="POST" novalidate>
     @csrf
     
     @if (session('success'))
@@ -12,16 +12,16 @@
 
      <div class="mb-3">
       <label for="exampleInputEmail1"class="form-label">
-        Documento:
+        Numero de Reserva:
       </label>
       <input
         id="exampleInputEmail1" aria-describedby="emailHelp"
-        name="documento"
+        name="id_reservas"
         type="text"
         class="form-control"
-        value="{{ old('documento') }}"
+        value="{{ old('id_reservas') }}"
       >
-        @error('documento')
+        @error('id_reservas')
           <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
         @enderror
 
@@ -29,51 +29,51 @@
 
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">
-        Tipo Documento:
+            documento:
       </label>
       <input
         id="exampleInputPassword1"
-        name="tipo_documento"
+        name="documento"
         type="text" class="form-control"
-        @error('tipo_documento')
-          value="{{ old('tipo_documento') }}"
+        @error('documento')
+          value="{{ old('documento') }}"
         @enderror
       >
-        @error('tipo_documento')
+        @error('documento')
           <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
         @enderror
     </div>
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-            nombre:
+            Numero de la Habitacion:
         </label>
         <input
           id="exampleInputPassword1"
-          name="nombre"
+          name="id_habitacion"
           type="text" class="form-control"
-          @error('nombre')
-            value="{{ old('nombre') }}"
+          @error('id_habitacion')
+            value="{{ old('id_habitacion') }}"
           @enderror
         >
-          @error('nombre')
+          @error('id_habitacion')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-          Primer apellido:
+          Cantidad de persona:
         </label>
         <input
           id="exampleInputPassword1"
-          name="primer_apellido"
+          name="cabtidad_perosnas"
           type="text" class="form-control"
-          @error('primer_apellido')
-            value="{{ old('primer_apellido') }}"
+          @error('cabtidad_perosnas')
+            value="{{ old('cabtidad_perosnas') }}"
           @enderror
         >
-          @error('primer_apellido')
+          @error('cabtidad_perosnas')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>
@@ -82,86 +82,68 @@
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-            Segundo Apellido:
+            fecha inicio:
         </label>
         <input
           id="exampleInputPassword1"
-          name="segundo_apellido"
-          type="text" class="form-control"
-          @error('segundo_apellido')
-            value="{{ old('segundo_apellido') }}"
+          name="fecha_inicio"
+          type="date" class="form-control"
+          @error('fecha_inicio')
+            value="{{ old('fecha_inicio') }}"
           @enderror
         >
-          @error('segundo_apellido')
+          @error('fecha_inicio')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-            Telefono:
+            fecha final:
         </label>
         <input
           id="exampleInputPassword1"
-          name="telefono"
+          name="fecha_final"
           type="text" class="form-control"
-          @error('telefono')
-            value="{{ old('telefono') }}"
+          @error('fecha_final')
+            value="{{ old('fecha_final') }}"
           @enderror
         >
-          @error('telefono')
+          @error('fecha_final')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-            Email:
+            dias:
         </label>
         <input
           id="exampleInputPassword1"
-          name="email"
+          name="dias"
           type="text" class="form-control"
-          @error('email')
-            value="{{ old('email') }}"
+          @error('dias')
+            value="{{ old('dias') }}"
           @enderror
         >
-          @error('email')
+          @error('dias')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">
-          Contraseña:
+          Cantidad Personas:
         </label>
         <input
           id="exampleInputPassword1"
-          name="password"
+          name="cantida_personas"
           type="text" class="form-control"
-          @error('password')
-            value="{{ old('password') }}"
+          @error('cantida_personas')
+            value="{{ old('cantida_personas') }}"
           @enderror
         >
-          @error('password')
-            <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
-          @enderror
-      </div>
-      
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">
-            ID Rol:
-        </label>
-        <input
-          id="exampleInputPassword1"
-          name="id_roles"
-          type="text" class="form-control"
-          value="1"
-          @error('id_roles')
-            value="{{ old('id_roles') }}"
-          @enderror
-        >
-          @error('id_roles')
+          @error('cantida_personas')
             <h6 class="alert alert-danger p-2 mt-2">{{ $message }}</h6>
           @enderror
       </div>

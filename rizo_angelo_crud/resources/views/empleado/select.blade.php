@@ -5,7 +5,7 @@
         <h4>Gestion de Empleados</h4>
         <div class="row">
             <div class="col-xl-12">
-                <form action="{{route('empleados.select')}}" method="get">
+                <form action="{{route('empleado.index')}}" method="get">
                     <div class="form-row">
                         <a href="{{route('empleado.create')}}" class="btn btn-warning btn-sm">Crear Un Cliente</a>
                     </div>

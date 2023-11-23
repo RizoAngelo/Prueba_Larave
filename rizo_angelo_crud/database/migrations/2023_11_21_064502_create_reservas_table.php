@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('fecha_inicio',50);
             $table->date('fecha_final',50);
             $table->string('dias',10);
-            $table->string('cantida_personas');
             $table->foreign('documento')->references('documento')->on('users');
             $table->foreign('id_habitacion')->references('id_habitacion')->on('habitaciones');
             $table->timestamps();
